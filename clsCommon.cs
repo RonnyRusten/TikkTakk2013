@@ -28,6 +28,15 @@ namespace TikkTakk2013
                 return Convert.ToInt16(frmKey.GetValue(KeyName, -1));
             }
 
+            public void setPositionSize(String frmName, String keyName, String keyValue)
+            {
+                Microsoft.Win32.RegistryKey MainKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software", true);
+                Microsoft.Win32.RegistryKey ParentKey = MainKey.CreateSubKey(str_Company);
+                Microsoft.Win32.RegistryKey AppKey = ParentKey.CreateSubKey(str_ProductName);
+                Microsoft.Win32.RegistryKey frmKey = AppKey.CreateSubKey(frmName);
+                frmKey.SetValue(keyName, keyValue);
+            }
+
             public Boolean WindowSizePos(string formName, ref int Left, ref int Top, ref int Width, ref int Height)
             {
                 int tmpLeft, tmpTop, tmpWidth, tmpHeight;

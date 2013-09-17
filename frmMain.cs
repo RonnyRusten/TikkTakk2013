@@ -20,6 +20,11 @@ namespace TikkTakk2013
             InitializeComponent();
         }
 
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             int Left = 0;
@@ -30,6 +35,10 @@ namespace TikkTakk2013
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
             _SaveWindow = commonFunctions.WindowSizePos(this.Name, ref Left, ref Top, ref Width, ref Height);
+            this.Left = Left;
+            this.Top = Top;
+            this.Width = Width;
+            this.Height = Height;
         }
 
         private void tmrMain_Tick(object sender, EventArgs e)
