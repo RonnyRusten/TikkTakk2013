@@ -7,8 +7,8 @@
     <ProjectGuid>{EFADF48D-B9C5-43E3-9CB4-008C1AA3A0DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TikkTakk2013</RootNamespace>
-    <AssemblyName>TikkTakk2013</AssemblyName>
+    <RootNamespace>TikkTakk2015</RootNamespace>
+    <AssemblyName>TikkTakk2015</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -39,6 +39,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Wait.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Classes\Common.cs" />
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Classes\Settings.cs" />
     <Compile Include="Controls\Activity.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +84,12 @@
       <DependentUpon>frmSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Program.cs" />
+    <Compile Include="Forms\FrmSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSummary.Designer.cs">
+      <DependentUpon>FrmSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Activity.resx">
       <DependentUpon>Activity.cs</DependentUpon>
@@ -92,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSetup.resx">
       <DependentUpon>frmSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSummary.resx">
+      <DependentUpon>FrmSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,6 +147,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stats2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tag1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Wait.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -61,7 +61,7 @@
             // btnActivities
             // 
             this.btnActivities.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnActivities.Image = global::TikkTakk2013.Properties.Resources.Wizard;
+            this.btnActivities.Image = global::TikkTakk2015.Properties.Resources.Tag1;
             this.btnActivities.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActivities.Name = "btnActivities";
             this.btnActivities.Size = new System.Drawing.Size(23, 22);
@@ -71,7 +71,7 @@
             // btnStats
             // 
             this.btnStats.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnStats.Image = global::TikkTakk2013.Properties.Resources.Table;
+            this.btnStats.Image = global::TikkTakk2015.Properties.Resources.Stats2;
             this.btnStats.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(23, 22);
@@ -82,12 +82,13 @@
             // btnSetup
             // 
             this.btnSetup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSetup.Image = global::TikkTakk2013.Properties.Resources.Tool;
+            this.btnSetup.Image = ((System.Drawing.Image)(resources.GetObject("btnSetup.Image")));
             this.btnSetup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Size = new System.Drawing.Size(23, 22);
             this.btnSetup.Text = "toolStripButton1";
             this.btnSetup.ToolTipText = "Innstillinger";
+            this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
             // 
             // lblDate
             // 
@@ -170,7 +171,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(230, 190);
             this.Name = "frmMain";
-            this.Text = "TikkTakk 2013";
+            this.Opacity = 0.85D;
+            this.Text = "TikkTakk 2015";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Move += new System.EventHandler(this.frmMain_Move);

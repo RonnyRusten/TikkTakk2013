@@ -20,6 +20,12 @@ namespace TikkTakk2013
             return opacity/100;
         }
 
+        public static string WindowsUser()
+        {
+            string userName = Environment.UserName;
+            return userName;
+        }
+
         public static DataTable GetTable(string sqlString)
         {
             DataTable tbl = new DataTable();

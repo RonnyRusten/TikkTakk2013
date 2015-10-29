@@ -76,7 +76,9 @@ namespace TikkTakk2013.Forms
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Common.SetRegistryKey("DefaultActivityId", (cbDefaultActivity.SelectedIndex > 0) ? cbDefaultActivity.SelectedValue.ToString() : "");
+            frmMain.MySettings.DefaultActivity = (int) cbDefaultActivity.SelectedValue;
+            frmMain.MySettings.WriteSettings();
+            //Common.SetRegistryKey("DefaultActivityId", (cbDefaultActivity.SelectedIndex > 0) ? cbDefaultActivity.SelectedValue.ToString() : "");
             Cleanup();
             //chkActive.Focus();
             dgvActivities.NotifyCurrentCellDirty(true);
@@ -148,20 +150,14 @@ namespace TikkTakk2013.Forms
 
         private void DefaultActivity()
         {
-            string sql = "SELECT IdActivity, Name FROM tblActivityName WHERE InUse = 1 AND UserName='" + Environment.UserName + "' UNION SELECT null, null ORDER BY Name";
+            string sql = "SELECT IdActivity, Name FROM tblActivityName WHERE InUse = 1 AND UserName='" + Functions.WindowsUser() + "' UNION SELECT null, null ORDER BY Name";
             DataTable tbl = Functions.GetTable(sql);
             cbDefaultActivity.DisplayMember = "Name";
             cbDefaultActivity.ValueMember = "IdActivity";
             cbDefaultActivity.DataSource = tbl;
-            string defaultId = Common.GetRegistryKey("DefaultActivityId");
-            if (defaultId.Length > 0)
-            {
-                cbDefaultActivity.SelectedValue = Convert.ToInt32(defaultId);
-            }
-            else
-            {
-                cbDefaultActivity.Text = "";
-            }
+
+            int defaultId = frmMain.MySettings.DefaultActivity;
+            cbDefaultActivity.SelectedValue = defaultId;
         }
 
         private void chkActive_CheckedChanged(object sender, EventArgs e)

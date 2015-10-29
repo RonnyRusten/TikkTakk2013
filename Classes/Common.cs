@@ -19,14 +19,14 @@ namespace TikkTakk2013
 
         public static bool DbConnect()
         {
-            //String connString;
-            //if (Common.Conn == null)
-            //{
-            //    connString = "Data Source=" + Common.StrDbPath;
-            //    Common.Conn = new System.Data.SqlServerCe.SqlCeConnection(connString);
-            //}
-            string dbServer = "rru-w8";
-            StrConnetion = "Server=" + dbServer + "; Database=TikkTakk; User Id=sa; Password=Doelle01;";
+            string dbServer = frmMain.MySettings.DatabaseServer; //GetRegistryKey("DbServer"); //"localhost";
+            string dbName = frmMain.MySettings.DatabaseName;
+            if (dbServer == "" || dbName=="")
+            {
+                return false;
+            }
+            StrConnetion = "Server=" + dbServer + "; Database=" + dbName + "; User Id=sa; Password=OCS_AM2015;";
+            
             Conn = new SqlConnection(StrConnetion);
             try
             {
@@ -82,8 +82,9 @@ namespace TikkTakk2013
 
         public static Boolean WindowSizePos(string formName, ref int Left, ref int Top, ref int Width, ref int Height)
         {
+            int leftBound = 0;
             int tmpLeft, tmpTop, tmpWidth, tmpHeight;
-            Boolean Offscreen = false;
+            Boolean offscreen = false;
 
             tmpLeft = GetPositionSize(formName, "WindowX");
             tmpTop = GetPositionSize(formName, "WindowY");
@@ -99,27 +100,29 @@ namespace TikkTakk2013
 
             try
             {
-                foreach (System.Windows.Forms.Screen Disp in System.Windows.Forms.Screen.AllScreens)
+                foreach (System.Windows.Forms.Screen disp in System.Windows.Forms.Screen.AllScreens)
                 {
-                    screenSize.Width += Disp.Bounds.Width;
-                    screenSize.Height += Disp.Bounds.Height;
+                    if (disp.Bounds.Left < leftBound)
+                    {
+                        leftBound = disp.Bounds.Left;
+                    }
+
+                    screenSize.Width += disp.Bounds.Width;
+                    screenSize.Height += disp.Bounds.Height;
                 }
 
-                if (tmpLeft >= screenSize.Width - tmpWidth) {
-                    tmpLeft = screenSize.Width - tmpWidth;
-                    Offscreen = true;
+                if (tmpLeft < leftBound) {
+                    tmpLeft = leftBound;
+                    offscreen = true;
                 }
-                if (tmpLeft < 0 ) {
-                    tmpLeft = 0;
-                    Offscreen = true;
-                }
+
                 if (tmpTop >= screenSize.Height ) {
                     tmpTop = screenSize.Height - tmpHeight;
-                    Offscreen = true;
+                    offscreen = true;
                 }
                 if (tmpTop < 0 ) {
                     tmpTop = 0;
-                    Offscreen = true;
+                    offscreen = true;
                 }
                 if (tmpWidth > screenSize.Width ) {
                     tmpWidth = screenSize.Width;
@@ -139,7 +142,7 @@ namespace TikkTakk2013
             Top = tmpTop;
             Width = tmpWidth;
             Height = tmpHeight;
-            return Offscreen;
+            return offscreen;
         }
     }
 }

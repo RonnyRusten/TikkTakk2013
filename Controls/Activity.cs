@@ -224,5 +224,12 @@ namespace TikkTakk2013.Controls
             Value = time.Value;
         }
 
+        private void mClear_Click(object sender, EventArgs e)
+        {
+            Stop();
+            DateTime test= Convert.ToDateTime("00:00:00");
+            Value = Convert.ToDateTime("00:00:00");
+            time.Value = test;
+        }
     }
 }
