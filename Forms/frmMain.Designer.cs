@@ -54,7 +54,7 @@
             this.btnSetup});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(284, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(254, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -95,9 +95,9 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(12, 39);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(40, 13);
+            this.lblDate.Size = new System.Drawing.Size(145, 13);
             this.lblDate.TabIndex = 1;
-            this.lblDate.Text = "lblDate";
+            this.lblDate.Text = "Torsdag 29. September 2015";
             // 
             // tmrMain
             // 
@@ -113,13 +113,12 @@
             // lblTime
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(187, 25);
+            this.lblTime.Location = new System.Drawing.Point(28, 25);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(85, 31);
+            this.lblTime.Size = new System.Drawing.Size(222, 31);
             this.lblTime.TabIndex = 2;
-            this.lblTime.Text = "lblTime";
+            this.lblTime.Text = "23:59:59";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // gbActivities
@@ -129,7 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbActivities.Location = new System.Drawing.Point(5, 55);
             this.gbActivities.Name = "gbActivities";
-            this.gbActivities.Size = new System.Drawing.Size(275, 253);
+            this.gbActivities.Size = new System.Drawing.Size(245, 253);
             this.gbActivities.TabIndex = 3;
             this.gbActivities.TabStop = false;
             this.gbActivities.Text = "Aktiviteter";
@@ -141,7 +140,7 @@
             this.lblStatus2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 323);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(284, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(254, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -162,14 +161,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 345);
+            this.ClientSize = new System.Drawing.Size(254, 345);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gbActivities);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(230, 190);
+            this.MinimumSize = new System.Drawing.Size(270, 190);
             this.Name = "frmMain";
             this.Opacity = 0.85D;
             this.Text = "TikkTakk 2015";

@@ -19,8 +19,8 @@ namespace TikkTakk2013
 
         public static bool DbConnect()
         {
-            string dbServer = frmMain.MySettings.DatabaseServer; //GetRegistryKey("DbServer"); //"localhost";
-            string dbName = frmMain.MySettings.DatabaseName;
+            string dbServer = (frmMain.MySettings.DatabaseServer == "") ? "premsrv03" : frmMain.MySettings.DatabaseServer; //GetRegistryKey("DbServer"); //"localhost";
+            string dbName = (frmMain.MySettings.DatabaseName == "") ? "TikkTakk" : frmMain.MySettings.DatabaseName;
             if (dbServer == "" || dbName=="")
             {
                 return false;

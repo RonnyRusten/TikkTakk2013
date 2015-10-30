@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TikkTakk2013.Classes
 {
@@ -67,9 +68,8 @@ namespace TikkTakk2013.Classes
             {
                 _tblSettings.ReadXml(_settingsFile);
             }
-
             DefaultActivity = (GetSetting("DefaultActivity") == "") ? -1 : Convert.ToInt32(GetSetting("DefaultActivity"));
-            Opacity = (GetSetting("Opacity") == "") ? 85 : Convert.ToInt32(GetSetting("Opacity"));
+            Opacity = (GetSetting("Opacity") == "") ? 95 : Convert.ToInt32(GetSetting("Opacity"));
             AlwaysOnTop = (GetSetting("AlwaysOnTop") != "") && Convert.ToBoolean(GetSetting("AlwaysOnTop"));
             SummaryStartDate = (GetSetting("SummaryStartDate") == "") ? DateTime.Today : Convert.ToDateTime(GetSetting("SummaryStartDate").Substring(0, 10).Replace(".", "/"));
             SummaryEndDate = (GetSetting("SummaryEndDate") == "") ? DateTime.Today : Convert.ToDateTime(GetSetting("SummaryEndDate").Substring(0, 10).Replace(".", "/"));

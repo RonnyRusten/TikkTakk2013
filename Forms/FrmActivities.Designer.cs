@@ -61,7 +61,6 @@
             this.dgvActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvActivities.Size = new System.Drawing.Size(321, 224);
             this.dgvActivities.TabIndex = 0;
-            this.dgvActivities.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivities_CellContentClick);
             this.dgvActivities.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivities_CellEndEdit);
             // 
             // chkActive

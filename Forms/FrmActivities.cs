@@ -43,7 +43,7 @@ namespace TikkTakk2013.Forms
 
         private void FrmActivities_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_saveWindow)
+           if (_saveWindow)
             {
                 Common.SetPositionSize(Name, "WindowX", Left.ToString());
                 Common.SetPositionSize(Name, "WindowY", Top.ToString());
@@ -69,14 +69,10 @@ namespace TikkTakk2013.Forms
             row.Cells["UserName"].Value = Environment.UserName;
         }
 
-        private void dgvActivities_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnOk_Click(object sender, EventArgs e)
         {
-            frmMain.MySettings.DefaultActivity = (int) cbDefaultActivity.SelectedValue;
+
+            frmMain.MySettings.DefaultActivity = (cbDefaultActivity.SelectedValue == null) ? -1 : (int) cbDefaultActivity.SelectedValue;
             frmMain.MySettings.WriteSettings();
             //Common.SetRegistryKey("DefaultActivityId", (cbDefaultActivity.SelectedIndex > 0) ? cbDefaultActivity.SelectedValue.ToString() : "");
             Cleanup();
@@ -96,7 +92,6 @@ namespace TikkTakk2013.Forms
 
         private void Cleanup()
         {
-
             if (dgvActivities.Rows[0].Cells[1].Value == DBNull.Value || dgvActivities.Rows[0].Cells[1].Value.ToString() == "")
             {
                 _tblActivities.Rows[0].Delete();

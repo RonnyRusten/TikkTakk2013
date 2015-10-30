@@ -53,6 +53,7 @@
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Servernavn";
+            this.label1.Visible = false;
             // 
             // txtServer
             // 
@@ -62,6 +63,7 @@
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(217, 20);
             this.txtServer.TabIndex = 0;
+            this.txtServer.Visible = false;
             // 
             // txtUserName
             // 
@@ -71,6 +73,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(217, 20);
             this.txtUserName.TabIndex = 2;
+            this.txtUserName.Visible = false;
             // 
             // label2
             // 
@@ -80,6 +83,7 @@
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Brukernavn";
+            this.label2.Visible = false;
             // 
             // txtPassword
             // 
@@ -90,6 +94,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(217, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Visible = false;
             // 
             // label3
             // 
@@ -99,6 +104,7 @@
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Passord";
+            this.label3.Visible = false;
             // 
             // lblOpacity
             // 
@@ -166,6 +172,7 @@
             this.txtDatabaseName.Name = "txtDatabaseName";
             this.txtDatabaseName.Size = new System.Drawing.Size(217, 20);
             this.txtDatabaseName.TabIndex = 1;
+            this.txtDatabaseName.Visible = false;
             // 
             // label4
             // 
@@ -175,6 +182,7 @@
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Databasenavn";
+            this.label4.Visible = false;
             // 
             // frmSetup
             // 
